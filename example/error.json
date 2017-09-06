@@ -1,4 +1,4 @@
 {
-  "title":  "Bad Request",
-  "detail": "You cannot do that."
+  "title":  "Some Error Case",
+  "detail": "Some description of error cause."
 }
