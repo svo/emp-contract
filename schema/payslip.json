@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "first_name":{
+      "type": "string"
+    },
+    "last_name":{
+      "type": "string"
+    },
+    "annual_salary":{
+      "type": "integer"
+    },
+    "year":{
+      "type": "integer"
+    },
+    "month":{
+      "type": "string"
+    }
+  },
+  "required": [
+    "first_name",
+    "last_name",
+    "annual_salary",
+    "year",
+    "month"
+  ]
+}

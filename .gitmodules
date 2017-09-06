@@ -1,0 +1,6 @@
+[submodule "ansible/roles/environment-core"]
+	path = ansible/roles/environment-core
+	url = git@github.com:svo/environment-core.git
+[submodule "ansible/roles/environment-nodejs"]
+	path = ansible/roles/environment-nodejs
+	url = git@github.com:svo/environment-nodejs.git

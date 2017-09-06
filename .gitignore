@@ -1,0 +1,8 @@
+*.swp
+*.iml
+.idea
+.vagrant
+api.html
+npm-debug.log
+node_modules
+artifacts

@@ -1,0 +1,17 @@
+{
+  "name": "emp-contracts",
+  "version": "0.0.1",
+  "description": "EMP API Contracts",
+  "scripts": {
+    "test": "node_modules/raml-cop/src/raml-cop.js api.raml",
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "raml-cop": "3.0.0",
+    "raml2html": "5.0.0",
+    "connect": "3.5.1",
+    "serve-static": "1.11.2",
+    "gulp": "3.9.1",
+    "gulp-shell": "0.5.2"
+  }
+}

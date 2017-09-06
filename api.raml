@@ -1,0 +1,33 @@
+#%RAML 1.0
+title: EMP contracts
+version: v0.0.1
+description: API definition for EMP
+documentation:
+  - title: EMP
+    content: |
+      API definition for EMP
+protocols: [HTTP]
+baseUri: http://{domain_name}/
+baseUriParameters:
+  domain_name:
+    description: Domain name for service or load balancer.
+
+traits: !include traits/standard-endpoint.raml
+
+/payslip:
+  is: [standardEndpoint]
+  description: Payslips
+
+  post:
+    description: Create payslip.
+    body:
+      application/json:
+        type: !include schema/payslip.json
+        example: !include example/post-payslip.json
+    responses:
+      201:
+        description: The payslip was created.
+        headers:
+          Location:
+            description: Uniform Resource Identifier (URI) for the created payslip.
+            example: /payslip/{payslip_id}

@@ -1,0 +1,33 @@
+
+    - name: Add vagrant user to user groups
+      user: name=vagrant groups={{ item }} append=yes
+      with_items:
+      - pcp
+      become: yes
+
+    - name: Install RAML vim plugin
+      git: repo=https://github.com/IN3D/vim-raml.git dest=~/.vim/bundle/vim-raml
+
+    - name: Install global NPM packages
+      npm: name={{ item.name }} version={{ item.version }} global=yes
+      become: yes
+      with_items:
+      - {name: gulp-cli, version: 1.2.2}
+
+    - name: Ensure node_modules is empty
+      file: path=/vagrant/node_modules state=absent
+
+    - name: NPM install
+      shell: npm install --ignore-scripts chdir=/vagrant/
+      register: result
+      retries: 10
+      delay: 3
+      until: result.rc == 0
+
+    - name: Copy upstart script for starting server
+      copy: src=http-server.conf dest=/etc/init/ mode=0644
+      become: yes
+
+    - name: Restart http-server
+      service: name=http-server state=started
+      become: yes
