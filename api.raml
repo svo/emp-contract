@@ -12,7 +12,29 @@ baseUriParameters:
   domain_name:
     description: Domain name for service or load balancer.
 
-traits: !include traits/standard-endpoint.raml
+traits:
+  standardEndpoint:
+    responses:
+      400:
+        description: Malformed request.
+        body:
+          application/json:
+            type: !include schema/error.json
+            example: !include example/error.json
+
+      404:
+        description: Resource not found.
+        body:
+          application/json:
+            type: !include schema/error.json
+            example: !include example/error.json
+
+      500:
+        description: General error processing the request.
+        body:
+          application/json:
+            type: !include schema/error.json
+            example: !include example/error.json
 
 /payslip:
   is: [standardEndpoint]
