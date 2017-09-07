@@ -19,22 +19,79 @@ traits:
         description: Malformed request.
         body:
           application/json:
-            type: !include schema/error.json
-            example: !include example/error.json
+            type: |
+              {
+                "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "detail": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "detail"
+                  ]
+              }
+            example: |
+              {
+                "title":  "Some Error Case",
+                "detail": "Some description of error cause."
+              }
 
       404:
         description: Resource not found.
         body:
           application/json:
-            type: !include schema/error.json
-            example: !include example/error.json
+            type: |
+              {
+                "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "detail": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "detail"
+                  ]
+              }
+            example: |
+              {
+                "title":  "Some Error Case",
+                "detail": "Some description of error cause."
+              }
 
       500:
         description: General error processing the request.
         body:
           application/json:
-            type: !include schema/error.json
-            example: !include example/error.json
+            type: |
+              {
+                "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "detail": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "detail"
+                  ]
+              }
+            example: |
+              {
+                "title":  "Some Error Case",
+                "detail": "Some description of error cause."
+              }
 
 /payslip:
   is: [standardEndpoint]
@@ -44,8 +101,42 @@ traits:
     description: Create payslip.
     body:
       application/json:
-        type: !include schema/payslip.json
-        example: !include example/post-payslip.json
+        type: |
+          {
+            "type": "object",
+            "properties": {
+              "first_name":{
+                "type": "string"
+              },
+              "last_name":{
+                "type": "string"
+              },
+              "annual_salary":{
+                "type": "integer"
+              },
+              "year":{
+                "type": "integer"
+              },
+              "month":{
+                "type": "string"
+              }
+            },
+            "required": [
+              "first_name",
+              "last_name",
+              "annual_salary",
+              "year",
+              "month"
+            ]
+          }
+        example: |
+          {
+            "first_name": "Sean",
+              "last_name": "Van Osselaer",
+              "annual_salary": 175000,
+              "year": 2017,
+              "month": "APRIL"
+          }
     responses:
       201:
         description: The payslip was created.
