@@ -7,7 +7,8 @@ documentation:
     content: |
       API definition for EMP
 protocols: [HTTP]
-baseUri: http://{domain_name}/
+mediaType: [application/json]
+baseUri: http://{domain_name}
 baseUriParameters:
   domain_name:
     description: Domain name for service or load balancer.
@@ -55,6 +56,7 @@ baseUriParameters:
               "year": 2017,
               "month": "APRIL"
           }
+
     responses:
       201:
         description: The payslip was created.
@@ -62,3 +64,11 @@ baseUriParameters:
           Location:
             description: Uniform Resource Identifier (URI) for the created payslip.
             example: /payslip/{payslip_id}
+
+          Strict-Transport-Security:
+          X-Frame-Options:
+          X-Content-Type-Options:
+          X-XSS-Protection:
+          X-Download-Options:
+          X-Permitted-Cross-Domain-Policies:
+          Content-Security-Policy:
