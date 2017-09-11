@@ -72,3 +72,24 @@ baseUriParameters:
           X-Download-Options:
           X-Permitted-Cross-Domain-Policies:
           Content-Security-Policy:
+
+  /{identifier}:
+    get:
+      description: Get payslip
+
+      responses:
+        200:
+          description: The PDF payslip.
+          body:
+            application/octet-stream:
+          headers:
+            Content-Type:
+            Strict-Transport-Security:
+            X-Frame-Options:
+            X-Content-Type-Options:
+            X-XSS-Protection:
+            X-Download-Options:
+            X-Permitted-Cross-Domain-Policies:
+            Content-Security-Policy:
+            Content-Length:
+            Last-Modified:
