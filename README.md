@@ -1,8 +1,17 @@
 # EMP API Contracts
 
+* [Trello Board](https://trello.com/b/WoAzNyra/)
+* [Continuous Integration](https://app.shippable.com/github/svo/emp-contract/dashboard)
+
 This repository contains the [RAML](http://raml.org/) contracts for the EMP API.
 
 Starts server on `:8080` if using [Vagrant](https://www.vagrantup.com/): http://vagrant-emp-contracts.local:8080/api.html
+
+__NOTE:__ this project uses git submodules so you will want to clone recursively to have all expected behaviours.
+
+```
+git clone --recursive git@github.com:svo/emp-contract.git
+```
 
 ## Setup
 
