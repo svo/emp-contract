@@ -38,6 +38,9 @@ baseUriParameters:
               },
               "month":{
                 "type": "string"
+              },
+              "super_rate":{
+                "type": "integer"
               }
             },
             "required": [
@@ -45,16 +48,18 @@ baseUriParameters:
               "last_name",
               "annual_salary",
               "year",
-              "month"
+              "month",
+              "super_rate"
             ]
           }
         example: |
           {
             "first_name": "Sean",
-              "last_name": "Van Osselaer",
-              "annual_salary": 175000,
-              "year": 2017,
-              "month": "APRIL"
+            "last_name": "Van Osselaer",
+            "annual_salary": 175000,
+            "year": 2017,
+            "month": "APRIL",
+            "super_rate": 9
           }
 
     responses:
